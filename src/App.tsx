@@ -3,13 +3,13 @@ import "./App.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import { actionCreators, State } from "./redux/store";
+import { bankActionCreators, State } from "./redux/store";
 
 function App() {
   const dispatch = useDispatch();
 
   const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(
-    actionCreators,
+    bankActionCreators,
     dispatch
   );
 
