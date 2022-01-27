@@ -1,13 +1,12 @@
 import React from "react";
-import BankPage from "./pages/bank";
-import PostPage from "./pages/post";
+import { BrowserRouter } from "react-router-dom";
+import RouterConfig from "./navigation/RouterConfig";
 
 function App() {
   return (
-    <>
-      <BankPage />
-      <PostPage />
-    </>
+    <BrowserRouter>
+      <RouterConfig />
+    </BrowserRouter>
   );
 }
 

@@ -4,6 +4,7 @@ import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { bankActionCreators, State } from "../redux/store";
+import Header from "../components/header";
 
 const BankPage = () => {
   const dispatch = useDispatch();
@@ -22,15 +23,18 @@ const BankPage = () => {
   };
 
   return (
-    <div className="App">
-      <h1>{money}</h1>
-      <input type="text" value={inputMoney} onChange={handleChangeInput} />
-      <br />
-      <br />
-      <button onClick={() => depositMoney(inputMoney)}>DEPOSIT</button>
-      <button onClick={() => withdrawMoney(inputMoney)}>WITHDRAW</button>
-      <button onClick={() => bankrupt()}>BANKRUPT</button>
-    </div>
+    <>
+      <Header />
+      <div className="App">
+        <h1>{money}</h1>
+        <input type="text" value={inputMoney} onChange={handleChangeInput} />
+        <br />
+        <br />
+        <button onClick={() => depositMoney(inputMoney)}>DEPOSIT</button>
+        <button onClick={() => withdrawMoney(inputMoney)}>WITHDRAW</button>
+        <button onClick={() => bankrupt()}>BANKRUPT</button>
+      </div>
+    </>
   );
 };
 

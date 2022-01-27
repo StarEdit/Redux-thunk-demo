@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
+import Header from "../components/header";
 import { postActionCreators, State } from "../redux/store";
 
 const PostPage = () => {
@@ -16,13 +17,16 @@ const PostPage = () => {
   }, []);
 
   return (
-    <div>
-      <ul>
-        {data.map((item: any) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Header />
+      <div>
+        <ul>
+          {data.map((item: any) => (
+            <li key={item.id}>{item.title}</li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
